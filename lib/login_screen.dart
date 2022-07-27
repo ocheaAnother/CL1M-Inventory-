@@ -8,6 +8,7 @@ class LoginScreen extends StatefulWidget {
   State<LoginScreen> createState() => _LoginScreenState();
 }
 
+//username function
 Widget buildUsername() {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,6 +43,7 @@ Widget buildUsername() {
   );
 }
 
+//password function
 Widget buildPassword() {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
@@ -76,27 +78,22 @@ Widget buildPassword() {
   );
 }
 
+//login button function
 Widget buildLoginBtn() {
   return Container(
     padding: const EdgeInsets.symmetric(vertical: 25),
     width: double.infinity,
-    child: RaisedButton(
-      elevation: 5,
+    child: ElevatedButton(
       onPressed: () => print('Login Pressed'),
-      padding: const EdgeInsets.all(15),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-      color: Colors.white,
       child: const Text(
         'LOGIN',
-        style: TextStyle(
-            color: Color(0xfffd5800),
-            fontSize: 18,
-            fontWeight: FontWeight.bold),
+        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
       ),
     ),
   );
 }
 
+//signUp button function
 Widget buildSignUpBtn() {
   return GestureDetector(
     onTap: () => print("Sign Up Pressed"),
@@ -124,9 +121,11 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        //title at the top bar
         title: const Text('CCIS CL1M INVENTORY'),
         backgroundColor: const Color(0xfffd5800),
       ),
+      //body
       body: AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle.light,
         child: GestureDetector(
@@ -140,6 +139,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                     colors: [
+                      //gradient colors of orange
                       Color(0xfffd5800),
                       Color(0xccfd5800),
                       Color(0x99fd5800),
@@ -148,12 +148,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 child: SingleChildScrollView(
+                  //for the page to be scrolled
                   physics: const AlwaysScrollableScrollPhysics(),
                   padding:
                       const EdgeInsets.symmetric(horizontal: 25, vertical: 120),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
+                      //signin button attributes
                       const Text(
                         'Sign In',
                         style: TextStyle(
@@ -161,6 +163,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             fontSize: 35,
                             fontWeight: FontWeight.bold),
                       ),
+                      //function call
                       const SizedBox(height: 50),
                       buildUsername(),
                       const SizedBox(height: 20),
