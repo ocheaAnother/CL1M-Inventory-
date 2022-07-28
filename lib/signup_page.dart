@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:loginpage2/signup_page.dart';
+import 'package:loginpage2/login_screen.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class SignupPage extends StatefulWidget {
+  const SignupPage({Key? key}) : super(key: key);
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignupPage> createState() => _SignupPageState();
 }
 
 //username function
@@ -15,7 +15,7 @@ Widget buildUsername() {
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
       const Text(
-        'username',
+        'enter username',
         style: TextStyle(
             color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
       ),
@@ -50,7 +50,7 @@ Widget buildPassword() {
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
       const Text(
-        'password',
+        'enter password',
         style: TextStyle(
             color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
       ),
@@ -85,9 +85,9 @@ Widget buildLoginBtn() {
     padding: const EdgeInsets.symmetric(vertical: 25),
     width: double.infinity,
     child: ElevatedButton(
-      onPressed: () => ('Login Pressed'),
+      onPressed: () => ('Register Pressed'),
       child: const Text(
-        'LOGIN',
+        'REGISTER',
         style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
       ),
     ),
@@ -101,7 +101,7 @@ Widget buildSignUpBtn(BuildContext context) {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => const SignupPage(),
+          builder: (context) => const LoginScreen(),
         ),
       );
     },
@@ -109,12 +109,12 @@ Widget buildSignUpBtn(BuildContext context) {
       text: const TextSpan(
         children: [
           TextSpan(
-            text: 'Don\'t have an account?  ',
+            text: 'Already have an acoount?  ',
             style: TextStyle(
                 color: Colors.white, fontSize: 18, fontWeight: FontWeight.w500),
           ),
           TextSpan(
-            text: 'Sign Up',
+            text: 'Log in',
             style: TextStyle(
                 color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
           ),
@@ -124,7 +124,7 @@ Widget buildSignUpBtn(BuildContext context) {
   );
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignupPageState extends State<SignupPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -165,7 +165,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     children: <Widget>[
                       //signin button attributes
                       const Text(
-                        'Login',
+                        'Sign Up',
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 35,
