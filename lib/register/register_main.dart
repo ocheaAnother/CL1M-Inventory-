@@ -15,7 +15,6 @@ class RegisterMain extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: const LoginScreen(),
       theme: ThemeData(
-        primarySwatch: Colors.blue,
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             primary: const Color(0xfffd5800),
