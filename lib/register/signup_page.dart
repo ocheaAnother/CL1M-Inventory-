@@ -97,13 +97,9 @@ Widget buildLoginBtn() {
 //signUp button function
 Widget buildSignUpBtn(BuildContext context) {
   return MaterialButton(
+    // Within the SecondRoute widget
     onPressed: () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const LoginScreen(),
-        ),
-      );
+      Navigator.pop(context);
     },
     child: RichText(
       text: const TextSpan(
@@ -125,6 +121,11 @@ Widget buildSignUpBtn(BuildContext context) {
 }
 
 class _SignupPageState extends State<SignupPage> {
+  final _formKey = GlobalKey<FormState>();
+
+  var username = '';
+  var password = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

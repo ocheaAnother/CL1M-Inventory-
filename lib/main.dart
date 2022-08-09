@@ -1,26 +1,43 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:main_menu_page/register/register_main.dart';
 import 'QR Scanner/scanner_main.dart';
 
+final FirebaseAuth _auth = FirebaseAuth.instance;
+
 void main() {
-  runApp(
-    MaterialApp(
-        title: 'CL1M INVENTORY',
-        debugShowCheckedModeBanner: false,
-        home: const HomePage(),
-        theme: ThemeData(
-          elevatedButtonTheme: ElevatedButtonThemeData(
-            style: ElevatedButton.styleFrom(
-              primary: const Color(0xfffd5800),
-            ),
-          ),
-        )),
-  );
+  runApp(const MyApp());
 }
 
-class HomePage extends StatelessWidget {
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'CL1M INVENTORY',
+      debugShowCheckedModeBanner: false,
+      home: const HomePage(),
+      theme: ThemeData(
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            primary: const Color(0xfffd5800),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,10 +46,8 @@ class HomePage extends StatelessWidget {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
-            Color(0xfffd5800),
-            Color(0xccfd5800),
-            Color(0x99fd5800),
-            Color(0xB3fd5800),
+            Color(0xffff6700),
+            Color(0xffff7e00),
           ],
         ),
       ),
@@ -90,7 +105,7 @@ class HomePage extends StatelessWidget {
                       child: const Text(
                         "Student",
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 20),
+                            fontWeight: FontWeight.bold, fontSize: 25),
                       ),
                     ),
 
@@ -112,7 +127,7 @@ class HomePage extends StatelessWidget {
                       child: const Text(
                         "Personnel",
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 20),
+                            fontWeight: FontWeight.bold, fontSize: 25),
                       ),
                     ),
                     const SizedBox(height: 20),
@@ -133,7 +148,7 @@ class HomePage extends StatelessWidget {
                       child: const Text(
                         "Admin",
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 20),
+                            fontWeight: FontWeight.bold, fontSize: 25),
                       ),
                     ),
                   ],

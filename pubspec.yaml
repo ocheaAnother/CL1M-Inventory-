@@ -29,6 +29,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  postgres: ^2.4.3
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -36,10 +37,19 @@ dependencies:
   cupertino_icons: ^1.0.2
   barcode_widget: ^2.0.2
   flutter_qr_bar_scanner: ^3.0.2
+  firebase_core: ^1.20.0
+  firebase_auth: ^3.6.2
+  firebase_auth_web: ^4.2.2
+  cloud_firestore: ^3.4.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.9.2
+  firebase_database: ^9.1.0
+
+
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -58,8 +68,7 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-assets:
-  - assets/images/ccis.png
+
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
